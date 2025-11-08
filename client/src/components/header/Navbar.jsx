@@ -1,5 +1,5 @@
-import React from 'react'
 import './navbar.css'
+import SearchIcon from '@mui/icons-material/Search';
 
 const Navbar = () => {
     return (
@@ -8,6 +8,14 @@ const Navbar = () => {
                 <div className="left">
                     <div className="navlogo">
                         <img src="./amazon_PNG25.png" alt="" />
+                    </div>
+
+                    <div className="nav_searchbar">
+                        <input type="text" name="" id="" />
+
+                        <div className="search_icon">
+                            <SearchIcon id="search" />
+                        </div>
                     </div>
                 </div>
 
