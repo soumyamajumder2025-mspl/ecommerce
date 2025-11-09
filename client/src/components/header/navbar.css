@@ -127,10 +127,20 @@ header nav .right .cart_btn p{
 
 header nav .avtar{
     cursor: pointer;
+    background-color: #1365cf;
+    color: white;
+    margin-left: 15px;
+    width: 35px;
+    height: 35px;
 }
+
 header nav .avtar2{
     cursor: pointer;
     background-color: #1365cf;
+    color: white;
+    margin-left: 15px;
+    width: 35px;
+    height: 35px;
 }
 
 header .hamburgur{

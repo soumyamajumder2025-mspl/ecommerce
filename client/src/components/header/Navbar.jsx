@@ -34,7 +34,9 @@ const Navbar = () => {
                         </Badge>
                     </div>
 
-                    <Avatar className='avtar' />
+                    <Avatar className='avtar' alt="User" sx={{ bgcolor: "#1365cf" }}>
+                        U
+                    </Avatar>
                 </div>
             </nav>
         </header>
