@@ -75,17 +75,16 @@ header nav .right {
 }
 
 .nav_btn button {
-    background: none;
-    border: none;
-    color: #fff;
-    font: inherit;
+    background: 'none';
+    border: '1px solid #131921';
+    color: '#fff';
+    font: 'inherit';
     font-weight: 500;
-    text-decoration: none;
-    margin-right: 2px;
-    border: 1px solid #131921;
-    border-radius: 2px;
-    padding: 8px;
-    cursor: pointer;
+    text-decoration: 'none';
+    margin-right: '2px';
+    border-radius: '2px';
+    padding: '8px';
+    cursor: 'pointer'
 }
 
 
