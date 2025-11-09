@@ -171,12 +171,6 @@ header nav .drawer {
         overflow: hidden;
     }
 
-    header nav .right .nav_btn,
-    header nav .right .avtar2,
-    header nav .right .avtar {
-        display: none;
-    }
-
     header nav .left input {
         width: 150px;
         margin-left: 10px;
@@ -189,7 +183,6 @@ header nav .drawer {
     header nav .right .cart_btn {
         margin-right: 0;
     }
-
 
 }
 

@@ -12,7 +12,7 @@ const Navbar = () => {
                 <div className="left">
 
                     <div className="navlogo">
-                        <img src="./amazon_PNG25.png" alt="logo" />
+                        <img src={process.env.PUBLIC_URL + '/amazon_PNG25.png'} alt="Amazon Logo" />
                     </div>
                     <div className="nav_searchbar">
                         <input type="text" name=""
@@ -27,9 +27,21 @@ const Navbar = () => {
                     <div className="nav_btn">
                         <button 
                             onClick={() => {}} 
-                            
+                            style={{ 
+                                background: 'none',
+                                border: 'none',
+                                color: '#fff',
+                                font: 'inherit',
+                                fontWeight: 500,
+                                textDecoration: 'none',
+                                marginRight: '2px',
+                                border: '1px solid #131921',
+                                borderRadius: '2px',
+                                padding: '8px',
+                                cursor: 'pointer'
+                            }}
                         >
-                            signin
+                            Sign In
                         </button>
                     </div>
 
@@ -41,7 +53,6 @@ const Navbar = () => {
                     </div>
 
                     <Avatar className="avtar" />
-
                 </div>
             </nav>
         </header>
