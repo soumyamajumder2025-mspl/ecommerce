@@ -72,6 +72,8 @@ header nav .right{
     align-items: center;
     /* border: 2px solid red; */
     flex: .3;
+    position: relative;
+    z-index: 5;
 }
 
 header nav .right .nav_btn a{
@@ -82,6 +84,8 @@ header nav .right .nav_btn a{
     border: 1px solid #131921;
     border-radius: 2px;
     padding: 8px;
+    position: relative;
+    z-index: 5;
 }
 
 
@@ -132,6 +136,8 @@ header nav .avtar{
     margin-left: 15px;
     width: 35px;
     height: 35px;
+    position: relative;
+    z-index: 5;
 }
 
 header nav .avtar2{
@@ -174,11 +180,7 @@ header nav .drawer{
     header nav{
         overflow: hidden;
     }
-    header nav .right .nav_btn,
-    header nav .right .avtar2,
-    header nav .right .avtar{
-        display:none;
-    }
+    /* Removed hiding of nav_btn and avtar to ensure they're visible */
     header nav .left input{
         width: 150px;
         margin-left: 10px;
