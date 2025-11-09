@@ -25,7 +25,12 @@ const Navbar = () => {
                 </div>
                 <div className="right">
                     <div className="nav_btn">
-                        signin
+                        <button 
+                            onClick={() => {}} 
+                            
+                        >
+                            signin
+                        </button>
                     </div>
 
                     <div className="cart_btn">
