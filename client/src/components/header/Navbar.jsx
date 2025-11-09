@@ -12,7 +12,7 @@ const Navbar = () => {
                 <div className="left">
 
                     <div className="navlogo">
-                        <img src={process.env.PUBLIC_URL + '/amazon_PNG25.png'} alt="Amazon Logo" />
+                        <img src='/amazon_PNG25.png' />
                     </div>
                     <div className="nav_searchbar">
                         <input type="text" name=""
