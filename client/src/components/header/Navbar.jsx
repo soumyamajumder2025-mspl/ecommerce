@@ -26,19 +26,7 @@ const Navbar = () => {
                 <div className="right">
                     <div className="nav_btn">
                         <button 
-                            onClick={() => {}} 
-                            style={{ 
-                                background: 'none',
-                                border: '1px solid #131921',
-                                color: '#fff',
-                                font: 'inherit',
-                                fontWeight: 500,
-                                textDecoration: 'none',
-                                marginRight: '2px',
-                                borderRadius: '2px',
-                                padding: '8px',
-                                cursor: 'pointer'
-                            }}
+                            onClick={() => {}}
                         >
                             Sign In
                         </button>
