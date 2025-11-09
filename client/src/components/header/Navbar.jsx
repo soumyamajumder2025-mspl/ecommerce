@@ -20,7 +20,20 @@ const Navbar = () => {
 
                 <div className="right">
                     <div className="nav_btn">
-                        <a href="#" style={{ color: 'white', textDecoration: 'none', backgroundColor: 'gray', padding: '8px', borderRadius: '4px', zIndex: 1000, position: 'relative' }}>Sign In</a>
+                        <button 
+                            onClick={() => {}} 
+                            style={{ 
+                                color: 'white', 
+                                backgroundColor: '#febd69', 
+                                padding: '8px 12px', 
+                                borderRadius: '4px', 
+                                border: 'none', 
+                                fontWeight: 'bold', 
+                                cursor: 'pointer'
+                            }}
+                        >
+                            Sign In
+                        </button>
                     </div>
 
                     <div className="cart_btn" style={{ display: 'flex', alignItems: 'center', backgroundColor: '#131921', padding: '8px', borderRadius: '4px', zIndex: 1000, position: 'relative' }}>
