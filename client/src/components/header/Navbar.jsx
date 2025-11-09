@@ -29,13 +29,12 @@ const Navbar = () => {
                             onClick={() => {}} 
                             style={{ 
                                 background: 'none',
-                                border: 'none',
+                                border: '1px solid #131921',
                                 color: '#fff',
                                 font: 'inherit',
                                 fontWeight: 500,
                                 textDecoration: 'none',
                                 marginRight: '2px',
-                                border: '1px solid #131921',
                                 borderRadius: '2px',
                                 padding: '8px',
                                 cursor: 'pointer'
