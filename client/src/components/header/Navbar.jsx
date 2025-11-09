@@ -24,17 +24,17 @@ const Navbar = () => {
 
                 <div className="right">
                     <div className="nav_btn">
-                        <a href="#">Sign In</a>
+                        <a href="#" style={{ color: 'white', textDecoration: 'none', backgroundColor: 'gray', padding: '8px', borderRadius: '4px' }}>Sign In</a>
                     </div>
 
                     <div className="cart_btn">
                         <Badge badgeContent={4} color="primary">
-                            <ShoppingCartIcon id="icon" />
-                            <p>Cart</p>
+                            <ShoppingCartIcon id="icon" style={{ color: 'white' }} />
+                            <p style={{ color: 'white' }}>Cart</p>
                         </Badge>
                     </div>
 
-                    <Avatar className='avtar' alt="User" sx={{ bgcolor: "#1365cf" }}>
+                    <Avatar className='avtar' alt="User" sx={{ bgcolor: "#1365cf", width: 35, height: 35, marginLeft: 2 }}>
                         U
                     </Avatar>
                 </div>
