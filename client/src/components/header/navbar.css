@@ -4,8 +4,7 @@ header{
     height: 60px;
     position: fixed;
     top: 0;
-    left: 0;
-    z-index: 100;
+    z-index:2;
     width: 100%;
 }
 
@@ -73,21 +72,16 @@ header nav .right{
     align-items: center;
     /* border: 2px solid red; */
     flex: .3;
-    position: relative;
-    z-index: 5;
 }
 
 header nav .right .nav_btn a{
-    color: #fff !important;
+    color: #fff;
     font-weight: 500;
     text-decoration: none;
     margin-right: 2px;
     border: 1px solid #131921;
     border-radius: 2px;
     padding: 8px;
-    position: relative;
-    z-index: 5;
-    background-color: #febd69 !important;
 }
 
 
@@ -107,7 +101,6 @@ header nav .right .cart_btn{
     align-items: center;
     justify-content: space-between;
     margin-right: 3px;
-    background-color: #131921 !important;
 }
 
 header nav .right .cart_btn:hover{
@@ -134,23 +127,10 @@ header nav .right .cart_btn p{
 
 header nav .avtar{
     cursor: pointer;
-    background-color: #1365cf !important;
-    color: white;
-    margin-left: 15px;
-    width: 35px;
-    height: 35px;
-    position: relative;
-    z-index: 5;
-    border: 2px solid white !important;
 }
-
 header nav .avtar2{
     cursor: pointer;
     background-color: #1365cf;
-    color: white;
-    margin-left: 15px;
-    width: 35px;
-    height: 35px;
 }
 
 header .hamburgur{
@@ -184,7 +164,11 @@ header nav .drawer{
     header nav{
         overflow: hidden;
     }
-    /* Removed hiding of nav_btn and avtar to ensure they're visible */
+    header nav .right .nav_btn,
+    header nav .right .avtar2,
+    header nav .right .avtar{
+        display:none;
+    }
     header nav .left input{
         width: 150px;
         margin-left: 10px;

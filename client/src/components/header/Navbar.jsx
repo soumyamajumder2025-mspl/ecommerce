@@ -1,54 +1,46 @@
-import './navbar.css'
+import "./navbar.css"
+import Avatar from '@mui/material/Avatar';
+import Badge from '@mui/material/Badge';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import SearchIcon from '@mui/icons-material/Search';
 
 const Navbar = () => {
+
     return (
         <header>
             <nav>
                 <div className="left">
+
                     <div className="navlogo">
-                        <img src={process.env.PUBLIC_URL + '/amazon_PNG25.png'} alt="Amazon Logo" />
+                        <img src="./amazon_PNG25.png" alt="logo" />
                     </div>
-
                     <div className="nav_searchbar">
-                        <input type="text" name="" id="" />
-
+                        <input type="text" name=""
+                            placeholder="Search Your Products" />
                         <div className="search_icon">
-                            <i className="fas fa-search" id="search"></i>
+                            <SearchIcon id="search" />
                         </div>
+
                     </div>
                 </div>
-
                 <div className="right">
                     <div className="nav_btn">
-                        <button 
-                            onClick={() => {}} 
-                            style={{ 
-                                color: 'white', 
-                                backgroundColor: '#febd69', 
-                                padding: '8px 12px', 
-                                borderRadius: '4px', 
-                                border: 'none', 
-                                fontWeight: 'bold', 
-                                cursor: 'pointer'
-                            }}
-                        >
-                            Sign In
-                        </button>
+                        <a href="#">signin</a>
                     </div>
 
-                    <div className="cart_btn" style={{ display: 'flex', alignItems: 'center', backgroundColor: '#131921', padding: '8px', borderRadius: '4px', zIndex: 1000, position: 'relative' }}>
-                        <span style={{ color: 'white', marginRight: '10px' }}>4</span>
-                        <i className="fas fa-shopping-cart" style={{ color: 'white', marginRight: '10px' }}></i>
-                        <p style={{ color: 'white', margin: 0 }}>Cart</p>
+                    <div className="cart_btn">
+                        <Badge badgeContent={4} color="primary">
+                            <ShoppingCartIcon id="icon" />
+                        </Badge>
+                        <p>Cart</p>
                     </div>
 
-                    <div style={{ width: '35px', height: '35px', backgroundColor: '#1365cf', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', marginLeft: '15px', zIndex: 1000, position: 'relative' }}>
-                        U
-                    </div>
+                    <Avatar className="avtar" />
+
                 </div>
             </nav>
         </header>
     )
 }
 
-export default Navbar
+export default Navbar;
