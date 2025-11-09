@@ -3,7 +3,8 @@
     height: 40px;
     background-color: #232f3e;
     position: relative;
-    top: 60px;
+    top: 0px;
+    margin-top: 60px;
 }
 
 .new_nav .nav_data{
