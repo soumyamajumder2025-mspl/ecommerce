@@ -1,8 +1,4 @@
 import './navbar.css'
-import SearchIcon from '@mui/icons-material/Search';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Badge } from '@mui/material';
-import Avatar from '@mui/material/Avatar';
 
 const Navbar = () => {
     return (
@@ -17,26 +13,25 @@ const Navbar = () => {
                         <input type="text" name="" id="" />
 
                         <div className="search_icon">
-                            <SearchIcon id="search" />
+                            <i className="fas fa-search" id="search"></i>
                         </div>
                     </div>
                 </div>
 
                 <div className="right">
                     <div className="nav_btn">
-                        <a href="#" style={{ color: 'white', textDecoration: 'none', backgroundColor: 'gray', padding: '8px', borderRadius: '4px' }}>Sign In</a>
+                        <a href="#" style={{ color: 'white', textDecoration: 'none', backgroundColor: 'gray', padding: '8px', borderRadius: '4px', zIndex: 1000, position: 'relative' }}>Sign In</a>
                     </div>
 
-                    <div className="cart_btn">
-                        <Badge badgeContent={4} color="primary">
-                            <ShoppingCartIcon id="icon" style={{ color: 'white' }} />
-                            <p style={{ color: 'white' }}>Cart</p>
-                        </Badge>
+                    <div className="cart_btn" style={{ display: 'flex', alignItems: 'center', backgroundColor: '#131921', padding: '8px', borderRadius: '4px', zIndex: 1000, position: 'relative' }}>
+                        <span style={{ color: 'white', marginRight: '10px' }}>4</span>
+                        <i className="fas fa-shopping-cart" style={{ color: 'white', marginRight: '10px' }}></i>
+                        <p style={{ color: 'white', margin: 0 }}>Cart</p>
                     </div>
 
-                    <Avatar className='avtar' alt="User" sx={{ bgcolor: "#1365cf", width: 35, height: 35, marginLeft: 2 }}>
+                    <div style={{ width: '35px', height: '35px', backgroundColor: '#1365cf', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', marginLeft: '15px', zIndex: 1000, position: 'relative' }}>
                         U
-                    </Avatar>
+                    </div>
                 </div>
             </nav>
         </header>

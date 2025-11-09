@@ -1,13 +1,11 @@
 import './App.css';
 import Navbar from './components/header/Navbar';
-import NewNavbar from './components/newnavbar/NewNavbar';
 
 function App() {
   return (
-    <>
+    <div style={{ marginTop: '0px' }}>
       <Navbar />
-      <NewNavbar />
-    </>
+    </div>
   );
 }
 

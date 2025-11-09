@@ -77,7 +77,7 @@ header nav .right{
 }
 
 header nav .right .nav_btn a{
-    color: #fff;
+    color: #fff !important;
     font-weight: 500;
     text-decoration: none;
     margin-right: 2px;
@@ -86,6 +86,7 @@ header nav .right .nav_btn a{
     padding: 8px;
     position: relative;
     z-index: 5;
+    background-color: #febd69 !important;
 }
 
 
@@ -105,6 +106,7 @@ header nav .right .cart_btn{
     align-items: center;
     justify-content: space-between;
     margin-right: 3px;
+    background-color: #131921 !important;
 }
 
 header nav .right .cart_btn:hover{
@@ -131,13 +133,14 @@ header nav .right .cart_btn p{
 
 header nav .avtar{
     cursor: pointer;
-    background-color: #1365cf;
+    background-color: #1365cf !important;
     color: white;
     margin-left: 15px;
     width: 35px;
     height: 35px;
     position: relative;
     z-index: 5;
+    border: 2px solid white !important;
 }
 
 header nav .avtar2{
