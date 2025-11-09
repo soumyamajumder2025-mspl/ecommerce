@@ -1,40 +1,20 @@
-import './navbar.css'
-
 const Navbar = () => {
     return (
-        <header>
-            <nav>
-                <div className="left">
-                    <div className="navlogo">
-                        <img src={process.env.PUBLIC_URL + '/amazon_PNG25.png'} alt="Amazon Logo" />
-                    </div>
-
-                    <div className="nav_searchbar">
-                        <input type="text" name="" id="" />
-
-                        <div className="search_icon">
-                            <i className="fas fa-search" id="search"></i>
-                        </div>
-                    </div>
+        <div style={{ backgroundColor: '#131921', height: '60px', position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '20px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                <a href="#" style={{ color: 'white', backgroundColor: '#febd69', padding: '8px 12px', borderRadius: '4px', textDecoration: 'none', fontWeight: 'bold' }}>Sign In</a>
+                
+                <div style={{ display: 'flex', alignItems: 'center', backgroundColor: '#131921', padding: '8px', borderRadius: '4px', border: '1px solid white' }}>
+                    <span style={{ color: 'white', marginRight: '8px', backgroundColor: 'red', borderRadius: '50%', width: '20px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>4</span>
+                    <span style={{ color: 'white', marginRight: '8px' }}>🛒</span>
+                    <span style={{ color: 'white', fontWeight: 'bold' }}>Cart</span>
                 </div>
-
-                <div className="right">
-                    <div className="nav_btn">
-                        <a href="#" style={{ color: 'white', textDecoration: 'none', backgroundColor: 'gray', padding: '8px', borderRadius: '4px', zIndex: 1000, position: 'relative' }}>Sign In</a>
-                    </div>
-
-                    <div className="cart_btn" style={{ display: 'flex', alignItems: 'center', backgroundColor: '#131921', padding: '8px', borderRadius: '4px', zIndex: 1000, position: 'relative' }}>
-                        <span style={{ color: 'white', marginRight: '10px' }}>4</span>
-                        <i className="fas fa-shopping-cart" style={{ color: 'white', marginRight: '10px' }}></i>
-                        <p style={{ color: 'white', margin: 0 }}>Cart</p>
-                    </div>
-
-                    <div style={{ width: '35px', height: '35px', backgroundColor: '#1365cf', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', marginLeft: '15px', zIndex: 1000, position: 'relative' }}>
-                        U
-                    </div>
+                
+                <div style={{ width: '35px', height: '35px', backgroundColor: '#1365cf', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold' }}>
+                    U
                 </div>
-            </nav>
-        </header>
+            </div>
+        </div>
     )
 }
 
