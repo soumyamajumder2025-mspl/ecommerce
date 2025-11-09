@@ -10,7 +10,7 @@ const Navbar = () => {
             <nav>
                 <div className="left">
                     <div className="navlogo">
-                        <img src="./amazon_PNG25.png" alt="" />
+                        <img src={process.env.PUBLIC_URL + '/amazon_PNG25.png'} alt="Amazon Logo" />
                     </div>
 
                     <div className="nav_searchbar">
@@ -24,7 +24,7 @@ const Navbar = () => {
 
                 <div className="right">
                     <div className="nav_btn">
-                        <a href="">signin</a>
+                        <a href="#">Sign In</a>
                     </div>
 
                     <div className="cart_btn">
@@ -35,9 +35,6 @@ const Navbar = () => {
                     </div>
 
                     <Avatar className='avtar' />
-
-
-
                 </div>
             </nav>
         </header>

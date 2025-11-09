@@ -17,7 +17,7 @@ const NewNavbar = () => {
                 </div>
 
                 <div className="right_data">
-                    <img src="./nav.jpg" alt="navdata" />
+                    <img src={process.env.PUBLIC_URL + '/nav.jpg'} alt="navdata" />
                 </div>
             </div>
         </div>
