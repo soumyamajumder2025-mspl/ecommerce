@@ -1,5 +1,7 @@
 import './home.css'
-import useEmblaCarousel from 'embla-carousel-react';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Banner = () => {
     const data = [
@@ -9,17 +11,26 @@ const Banner = () => {
         "https://rukminim1.flixcart.com/flap/1680/280/image/685712c6cefb3c02.jpg?q=50"
     ];
 
-    const [emblaRef] = useEmblaCarousel({ loop: true });
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: true
+    };
 
     return (
-        <div className="embla" ref={emblaRef}>
-            <div className="embla__container">
+        <div className="banner-container">
+            <Slider {...settings}>
                 {data.map((item, i) => (
-                    <div className="embla__slide" key={i}>
+                    <div key={i}>
                         <img src={item} alt={`Banner ${i + 1}`} className='banner_img' />
                     </div>
                 ))}
-            </div>
+            </Slider>
         </div>
     )
 }
