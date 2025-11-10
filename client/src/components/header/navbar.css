@@ -74,24 +74,20 @@ header nav .right {
     flex: .3;
 }
 
-.nav_btn button {
-    background: 'none';
-    border: '1px solid #131921';
-    color: '#fff';
-    font: 'inherit';
+header nav .right .nav_btn button {
+    background: none;
+    border: 1px solid #131921;
+    color: #fff;
+    font: inherit;
     font-weight: 500;
-    text-decoration: 'none';
-    margin-right: '2px';
-    border-radius: '2px';
-    padding: '8px';
-    cursor: 'pointer'
+    text-decoration: none;
+    margin-right: 2px;
+    border-radius: 2px;
+    padding: 8px;
+    cursor: pointer;
 }
 
 
-
-header nav .right .nav_btn a:hover {
-    border: 1px solid white;
-}
 
 header nav .right .cart_btn {
     display: flex;
