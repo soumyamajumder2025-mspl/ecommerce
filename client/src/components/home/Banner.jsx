@@ -1,4 +1,4 @@
-import './home.css'
+import './banner.css'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -11,6 +11,29 @@ const Banner = () => {
         "https://rukminim1.flixcart.com/flap/1680/280/image/685712c6cefb3c02.jpg?q=50"
     ];
 
+
+     const SampleNextArrow = (props) => {
+        const { className, style, onClick } = props;
+        return (
+            <div
+                className={className}
+                style={{ ...style, display: "block", right: "10px", zIndex: 10 }}
+                onClick={onClick}
+            />
+        );
+    };
+
+    const SamplePrevArrow = (props) => {
+        const { className, style, onClick } = props;
+        return (
+            <div
+                className={className}
+                style={{ ...style, display: "block", left: "10px", zIndex: 10 }}
+                onClick={onClick}
+            />
+        );
+    };
+
     const settings = {
         dots: false,
         infinite: true,
@@ -19,8 +42,12 @@ const Banner = () => {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
-        arrows: true
+        arrows: true,
+        fade: true,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />
     };
+    
 
     return (
         <div className="banner-container">

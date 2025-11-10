@@ -7,14 +7,3 @@
     border-bottom: 2px solid rgba(199, 199, 199);
     margin-bottom: 10px;
 }
-
-.banner-container {
-    width: 100%;
-    margin: 0 auto;
-}
-
-.banner_img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
