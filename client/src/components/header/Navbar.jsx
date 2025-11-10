@@ -12,7 +12,7 @@ const Navbar = () => {
                 <div className="left">
 
                     <div className="navlogo">
-                        <img src='/amazon_PNG25.png' />
+                        <img src='/amazon_PNG25.png' alt='Amazon Logo' />
                     </div>
                     <div className="nav_searchbar">
                         <input type="text" name=""
