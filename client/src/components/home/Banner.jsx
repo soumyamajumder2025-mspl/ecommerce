@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './home.css';
 import { Box, IconButton } from '@mui/material';
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
+import useEmblaCarousel from 'embla-carousel-react';
 
 const Banner = () => {
     const data = [
@@ -11,103 +12,87 @@ const Banner = () => {
         "https://rukminim1.flixcart.com/flap/1680/280/image/685712c6cefb3c02.jpg?q=50"
     ];
 
-    // Simple carousel state using component state
-    const [currentIndex, setCurrentIndex] = React.useState(0);
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+    const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
+    const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+    const [selectedIndex, setSelectedIndex] = useState(0);
 
-    const goToPrevious = () => {
-        const isFirstSlide = currentIndex === 0;
-        const newIndex = isFirstSlide ? data.length - 1 : currentIndex - 1;
-        setCurrentIndex(newIndex);
-    };
+    const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+    const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+    const scrollTo = useCallback((index) => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
 
-    const goToNext = () => {
-        const isLastSlide = currentIndex === data.length - 1;
-        const newIndex = isLastSlide ? 0 : currentIndex + 1;
-        setCurrentIndex(newIndex);
-    };
+    const onSelect = useCallback(() => {
+        if (!emblaApi) return;
+        setSelectedIndex(emblaApi.selectedScrollSnap());
+        setPrevBtnEnabled(emblaApi.canScrollPrev());
+        setNextBtnEnabled(emblaApi.canScrollNext());
+    }, [emblaApi]);
 
-    const goToSlide = (slideIndex) => {
-        setCurrentIndex(slideIndex);
-    };
+    useEffect(() => {
+        if (!emblaApi) return;
+        onSelect();
+        emblaApi.on('select', onSelect);
+        return () => {
+            emblaApi.off('select', onSelect);
+        };
+    }, [emblaApi, onSelect]);
+
+    // Auto slide change every 5 seconds
+    useEffect(() => {
+        if (!emblaApi) return;
+        const interval = setInterval(() => {
+            emblaApi.scrollNext();
+        }, 5000);
+        
+        return () => clearInterval(interval);
+    }, [emblaApi]);
 
     return (
-        <Box className='carousel-container' position="relative" width="100%" height="280px">
+        <Box className='carousel-container'>
             {/* Left arrow */}
             <IconButton 
                 className="carousel-arrow carousel-arrow-left"
-                onClick={goToPrevious}
-                sx={{
-                    position: 'absolute',
-                    left: '10px',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    zIndex: 10,
-                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
-                    '&:hover': {
-                        backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                    }
-                }}
+                onClick={scrollPrev}
+                disabled={!prevBtnEnabled}
             >
                 <ChevronLeft />
             </IconButton>
             
-            {/* Banner image */}
-            <Box 
-                className='banner-slide'
-                component="img" 
-                src={data[currentIndex]} 
-                alt={`Banner ${currentIndex + 1}`} 
-                sx={{
-                    width: '100%',
-                    height: '280px',
-                    objectFit: 'cover',
-                }}
-            />
+            {/* Carousel viewport */}
+            <Box className="embla" ref={emblaRef}>
+                <Box className="embla__container">
+                    {data.map((item, index) => (
+                        <Box 
+                            key={index} 
+                            className="embla__slide"
+                        >
+                            <Box 
+                                component="img" 
+                                src={item} 
+                                alt={`Banner ${index + 1}`} 
+                                className='banner-slide'
+                            />
+                        </Box>
+                    ))}
+                </Box>
+            </Box>
             
             {/* Right arrow */}
             <IconButton 
                 className="carousel-arrow carousel-arrow-right"
-                onClick={goToNext}
-                sx={{
-                    position: 'absolute',
-                    right: '10px',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    zIndex: 10,
-                    backgroundColor: 'rgba(255, 255, 255, 0.7)',
-                    '&:hover': {
-                        backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                    }
-                }}
+                onClick={scrollNext}
+                disabled={!nextBtnEnabled}
             >
                 <ChevronRight />
             </IconButton>
             
             {/* Dots indicator */}
-            <Box 
-                className="carousel-dots"
-                sx={{
-                    position: 'absolute',
-                    bottom: '10px',
-                    width: '100%',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    gap: '8px',
-                    zIndex: 10
-                }}
-            >
+            <Box className="carousel-dots">
                 {data.map((_, index) => (
                     <Box
                         key={index}
-                        onClick={() => goToSlide(index)}
-                        sx={{
-                            width: '12px',
-                            height: '12px',
-                            borderRadius: '50%',
-                            backgroundColor: index === currentIndex ? '#fff' : 'rgba(255, 255, 255, 0.5)',
-                            cursor: 'pointer',
-                            transition: 'background-color 0.3s ease'
-                        }}
+                        onClick={() => scrollTo(index)}
+                        className={`carousel-dot ${index === selectedIndex ? 'active' : ''}`}
                     />
                 ))}
             </Box>
