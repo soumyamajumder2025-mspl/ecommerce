@@ -1,6 +1,7 @@
 import './home.css'
 import Carousel from 'react-material-ui-carousel'
 
+
 const Banner = () => {
     const data = [
         "https://rukminim1.flixcart.com/flap/1680/280/image/1defb861e409319b.jpg?q=50",
